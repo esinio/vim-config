@@ -17,13 +17,10 @@ curl https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim 
 ```
 
 ### Plugins  
-
-
 - vim-go
 - nerdtree
 - vim-airline
 - vim-fugitive
-- curl https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim -o ${HOME}/.vim/colors/molokai.vim
 
 ### Colors
 - molokai https://github.com/tomasr/molokai
