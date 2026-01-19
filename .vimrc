@@ -9,7 +9,7 @@ set encoding=utf-8
 set expandtab
 set fileencoding=utf-8
 set nocompatible
-"set number
+set number
 set relativenumber
 set ignorecase
 set incsearch
@@ -39,6 +39,13 @@ let mapleader = ","
 
 "" change to directory of current file
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+" 映射 <leader><space> 来清除搜索高亮
+nnoremap <leader><space> :nohlsearch<CR>
+" 映射 <leader>gd 跳转到定义
+nnoremap <leader>gd :GoDef<CR>
+" NERDTree
+nnoremap <leader>nt :NERDTree<CR>
+
 
 " inoremap
 inoremap { {<CR>}<ESC>O
@@ -49,12 +56,12 @@ inoremap ' ''<ESC>i
 inoremap ` ``<ESC>i
 inoremap jj <ESC>
 
-"" create nested non-exsiting paths                                                 
+"" create nested non-exsiting paths
 cnoremap mk. !mkdir -p <c-r>=expand("%:h")<cr>/
 
 "" colo molokai
-let g:molokai_original = 1                                                          
-let g:rehash256 = 1 
+let g:molokai_original = 1
+let g:rehash256 = 1
 
 " vim-go 插件
 "==============================================================================
@@ -79,11 +86,11 @@ let g:go_highlight_variable_declarations = 1
 
 let g:godef_split=2
 
-let g:netrw_sort_by = 'time'                                                        
-let g:netrw_sort_direction = 'reverse'                                              
-let g:netrw_browse_split = 1                                                        
+let g:netrw_sort_by = 'time'
+let g:netrw_sort_direction = 'reverse'
+let g:netrw_browse_split = 1
 " thin/long/wide/tree
-let g:netrw_liststyle = 3                                                           
-let g:netrw_banner = 0                                                           
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
