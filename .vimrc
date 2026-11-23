@@ -32,7 +32,8 @@ syntax enable
 
 filetype plugin indent on
 
-colorscheme molokai
+"colorscheme molokai
+colorscheme catppuccin_mocha
 
 "" leader key
 let mapleader = ","
