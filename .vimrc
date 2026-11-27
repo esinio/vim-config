@@ -9,8 +9,10 @@ set encoding=utf-8
 set expandtab
 set fileencoding=utf-8
 set nocompatible
-set number
-set relativenumber
+"set nu"
+set number 
+"set rnu"
+set relativenumber 
 set ignorecase
 set incsearch
 set hlsearch
@@ -26,14 +28,20 @@ set tabstop=4
 set wildmenu
 set wildmode=longest:list,full
 set colorcolumn=81
+set termguicolors
 
 syntax on
 syntax enable
 
 filetype plugin indent on
 
-"colorscheme molokai
+""colorscheme molokai
 colorscheme catppuccin_mocha
+
+if $TERM_PROGRAM ==# 'Apple_Terminal'
+  hi Normal guibg=NONE ctermbg=NONE
+  hi CursorLine gui=underline guibg=NONE cterm=underline ctermbg=NONE
+endif
 
 "" leader key
 let mapleader = ","
@@ -47,9 +55,9 @@ nnoremap <leader>gd :GoDef<CR>
 " NERDTree
 nnoremap <leader>nt :NERDTree<CR>
 
-
 " inoremap
-inoremap { {<CR>}<ESC>O
+"inoremap { {<CR>}<ESC>O
+inoremap { {}<ESC>i
 inoremap [ []<ESC>i
 inoremap ( ()<ESC>i
 inoremap " ""<ESC>i
@@ -57,12 +65,12 @@ inoremap ' ''<ESC>i
 inoremap ` ``<ESC>i
 inoremap jj <ESC>
 
-"" create nested non-exsiting paths
+"" create nested non-exsiting paths                                                 
 cnoremap mk. !mkdir -p <c-r>=expand("%:h")<cr>/
 
 "" colo molokai
-let g:molokai_original = 1
-let g:rehash256 = 1
+let g:molokai_original = 1                                                          
+let g:rehash256 = 1 
 
 " vim-go 插件
 "==============================================================================
@@ -87,11 +95,15 @@ let g:go_highlight_variable_declarations = 1
 
 let g:godef_split=2
 
-let g:netrw_sort_by = 'time'
-let g:netrw_sort_direction = 'reverse'
-let g:netrw_browse_split = 1
+let g:netrw_sort_by = 'time'                                                        
+let g:netrw_sort_direction = 'reverse'                                              
+let g:netrw_browse_split = 1                                                        
 " thin/long/wide/tree
-let g:netrw_liststyle = 3
-let g:netrw_banner = 0
+let g:netrw_liststyle = 3                                                           
+let g:netrw_banner = 0                                                           
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
+
+let g:airline_powerline_fonts = 1
+" 让 Airline 也使用 Catppuccin 的柔和配色
+let g:airline_theme = 'catppuccin'
